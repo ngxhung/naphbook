@@ -49,7 +49,9 @@ const db = USE_MSSQL
       }
     });
 
-app.use(cors());
+app.use(cors({
+  origin: "https://naphbook.onrender.com"
+}));
 app.use(express.json({ limit: "10mb" }));
 
 // Serve uploaded files
@@ -531,7 +533,9 @@ function parseOrderRow(row) {
   };
 }
 
-app.use(cors());
+app.use(cors({
+  origin: "https://naphbook.onrender.com"
+}));
 app.use(express.json());
 app.use(express.static(FRONTEND_DIR));
 
